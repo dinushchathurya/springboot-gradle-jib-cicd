@@ -65,4 +65,4 @@ task dockerPush {
             commandLine 'docker', 'push', "docker.io/${project.name}:${project.version}"
         }
     }
-}
+} 
