@@ -53,14 +53,14 @@ jib {
         image = "gcr.io/distroless/java:11"
     }
     to {
-        image = "registry.hub.docker.com/limarktest/${project.name}:${project.version}"
+        image = "docker.io/limarktest/${project.name}:${project.version}"
     }
 }
 
 task dockerPush {
     doLast {
         exec {
-            commandLine 'docker', 'push', "registry.hub.docker.com/limarktest/${project.name}:${project.version}"
+            commandLine 'docker', 'push', "docker.io/limarktest/${project.name}:${project.version}"
         }
     }
 } 
