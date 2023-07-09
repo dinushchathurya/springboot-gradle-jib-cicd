@@ -34,7 +34,7 @@ jobs:
     - name: Build docker image
       run: ./gradlew --no-daemon jibDockerBuild
     - name: push docker image
-      run: ./gradlew --no-daemon jib -Pjib.to.image=docker.io/limarktest/sampleweb:${{ github.sha }} -Pjib.to.auth.username=$DOCKER_USERNAME -Pjib.to.auth.password=$DOCKER_PASSWORD
+      run: ./gradlew --no-daemon jib -Pjib.to.image=docker.io/limarktest/sampleweb:${{ github.sha }} -Pjib.to.auth.username=$DOCKER_USERNAME -Pjib.to.auth.password=$DOCKER_PASSWORD -Pjib.to.auth.registry=index.docker.io/v1
     # - name: Login to Docker registry
     #   run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} index.docker.io/v1
     # - name: Execute Gradle dockerPush
