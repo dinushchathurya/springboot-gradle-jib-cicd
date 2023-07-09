@@ -24,5 +24,7 @@ jobs:
       uses: gradle/gradle-build-action@v2
     - name: Execute Gradle build
       run: ./gradlew --no-daemon clean build
-    - name: Execute Gradle build
+    - name: Execute Gradle unit test
       run: ./gradlew test
+    - name: Build docker image
+      run: ./gradlew --no-daemon jibDockerBuild
