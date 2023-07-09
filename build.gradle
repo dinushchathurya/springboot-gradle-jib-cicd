@@ -58,3 +58,11 @@ jib {
         image = "docker.io/${project.name}:${project.version}"
     }
 }
+
+task dockerPush {
+    doLast {
+        exec {
+            commandLine 'docker', 'push', "docker.io/${project.name}:${project.version}"
+        }
+    }
+}
