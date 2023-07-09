@@ -44,6 +44,7 @@ test {
 	useJUnitPlatform()
 }
 
+/** custom added task */
 task generateMetadata(type: WriteProperties) {
     property("version", project.version)
     setOutputFile("${buildDir}/metadata.properties")
@@ -51,9 +52,9 @@ task generateMetadata(type: WriteProperties) {
 
 jib {
     from {
-        image = "openjdk:8-alpine"
+        image = "gcr.io/distroless/java:11"
     }
     to {
-        image = "${project.name}:1.0.0"
+        image = "docker.io/${project.name}:${project.version}"
     }
 }
