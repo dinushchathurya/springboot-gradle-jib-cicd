@@ -20,6 +20,8 @@ jobs:
         distribution: 'temurin'
     - name: Make gradlew executable
       run: chmod +x ./gradlew
+    - name: Delete Gradle cache
+      run: rm -rf $HOME/.gradle/caches
     - name: Setup Gradle
       uses: gradle/gradle-build-action@v2
       with: 
