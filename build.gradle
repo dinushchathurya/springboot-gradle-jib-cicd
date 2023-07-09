@@ -54,6 +54,6 @@ jib {
         image = "openjdk:8-alpine"
     }
     to {
-        image = "127.0.0.1:8082/${project.name}:${project.version}"
+        image = "localhost:8082/${project.name}:1.0.0"
     }
 }
