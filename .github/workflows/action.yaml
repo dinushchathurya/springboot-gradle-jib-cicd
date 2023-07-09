@@ -20,21 +20,19 @@ jobs:
         distribution: 'temurin'
     - name: Make gradlew executable
       run: chmod +x ./gradlew
-    - name: Delete Gradle cache
-      run: rm -rf $HOME/.gradle/caches
-    - name: Setup Gradle
-      uses: gradle/gradle-build-action@v2
-      with: 
-        cache-disabled: true
-    - name: Execute Gradle build
-      run: ./gradlew --no-daemon clean build 
+    # - name: Setup Gradle
+    #   uses: gradle/gradle-build-action@v2
+    #   with: 
+    #     cache-disabled: true
+    # - name: Execute Gradle build
+    #   run: ./gradlew --no-daemon clean build 
     # - name: Execute Gradle unit test
     #   run: ./gradlew test
-    # - name: Build docker image
-    #   run: ./gradlew --no-daemon jibDockerBuild
-    # - name: Login to Docker Hub
-    #   uses: docker/login-action@v2
-    #   with:
-    #     username: ${{ secrets.DOCKER_USERNAME }}
-    #     password: ${{ secrets.DOCKER_PASSWORD }}
+    - name: Build docker image
+      run: ./gradlew --no-daemon jibDockerBuild
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
       
