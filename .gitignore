@@ -1,89 +1,14 @@
-# Created by http://gitignore.io
+.gradle
+/build/
 
-### Windows ###
-# Windows image file caches
-Thumbs.db
-ehthumbs.db
+# Ignore Gradle GUI config
+gradle-app.setting
 
-# Folder config file
-Desktop.ini
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# Cache of project
+.gradletasknamecache
 
-### Linux ###
-.*
-!.gitignore
-!.git*
-*~
-
-
-### OSX ###
-.DS_Store
-.AppleDouble
-.LSOverride
-Icon
-
-
-# Thumbnails
-._*
-
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
-
-### Java ###
-*.class
-
-# Package Files #
-*.jar
-*.war
-*.ear
-
-### Gradle ###
-# Exclude Folder List #
-.gradle/
-build/
-
-
-### Eclipse ###
-*.pydevproject
-.project
-.metadata
-bin/**
-tmp/**
-tmp/**/*
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.classpath
-.settings/
-.loadpath
-
-# External tool builders
-.externalToolBuilders/
-
-# Locally stored "Eclipse launch configurations"
-*.launch
-
-# CDT-specific
-.cproject
-
-# PDT-specific
-.buildpath
-
-### IntelliJ ###
-*.iml
-*.ipr
-*.iws
-.idea/
-
-### SVN ###
-.svn/
-
-### Maven ###
-target/
-
-/bin
+# # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
+# gradle/wrapper/gradle-wrapper.properties

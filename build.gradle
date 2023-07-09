@@ -1,14 +1,9 @@
-import org.apache.tools.ant.filters.ReplaceTokens
-
 plugins {
 	id 'org.springframework.boot' version '2.5.4'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
 	id 'war'
 	id 'org.sonarqube' version '3.3'
-
-	// Jib plugin
-	id 'com.google.cloud.tools.jib' version "${jibVersion}"
 }
 
 group = 'com.example'
@@ -17,20 +12,6 @@ sourceCompatibility = '1.8'
 
 repositories {
 	mavenCentral()
-}
-
-allprojects {
-    repositories {
-        maven { 
-			url 'https://jitpack.io' 
-		}
-    }
-
-    ext {
-        buildNumber = System.getenv("BUILD_NUMBER") ?: "0"
-    }
-
-    version = "${project.marketingVersion}-build-${project.ext.buildNumber}".toString()
 }
 
 dependencies {
@@ -44,25 +25,3 @@ test {
 	useJUnitPlatform()
 }
 
-/** custom added task */
-task generateMetadata(type: WriteProperties) {
-    property("version", project.version)
-    setOutputFile("${buildDir}/metadata.properties")
-}
-
-jib {
-    from {
-        image = "gcr.io/distroless/java:11"
-    }
-    to {
-        image = "docker.io/${project.name}:${project.version}"
-    }
-}
-
-task dockerPush {
-    doLast {
-        exec {
-            commandLine 'docker', 'push', "docker.io/${project.name}:${project.version}"
-        }
-    }
-} 
