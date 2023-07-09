@@ -1,11 +1,16 @@
-name: Deploy Helm Chart
+name: Java CI with Gradle
+
 on:
   push:
     branches:
-    	- master
+      - master
+
+permissions: write-all
+
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
+
       - name: Checkout code
         uses: actions/checkout@v3
