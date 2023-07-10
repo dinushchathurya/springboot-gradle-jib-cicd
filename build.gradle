@@ -25,7 +25,7 @@ allprojects {
     }
 
     ext {
-        buildNumber = System.getenv("BUILD_NUMBER") ?: "0"
+        buildNumber = System.getenv("GITHUB_RUN_NUMBER") ?: "0"
     }
 
     version = "${project.marketingVersion}-build-${project.ext.buildNumber}".toString()
