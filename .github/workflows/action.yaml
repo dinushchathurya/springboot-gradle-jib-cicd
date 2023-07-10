@@ -35,5 +35,5 @@ jobs:
     - name: Execute Gradle dockerPush
       run: |
         echo "${{ secrets.PAT_TOKEN }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} index.docker.io/v1
-        ./gradlew --no-daemon dockerPush
+        docker push docker.io/limarktest/${project.name}:${project.version}
       
