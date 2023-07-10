@@ -34,6 +34,6 @@ jobs:
       run: ./gradlew --no-daemon jibDockerBuild
     - name: Execute Gradle dockerPush
       run: |
-        echo "${{ secrets.PAT_TOKEN }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} index.docker.io/v1
-        docker push docker.io/limarktest/${project.name}:${project.version}
+        echo "${{ secrets.PAT_TOKEN }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }} 
+        ./gradlew --no-daemon dockerPush
       
