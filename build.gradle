@@ -52,7 +52,7 @@ task generateMetadata(type: WriteProperties) {
 // Task use to tag docker image
 jib {
     from {
-        image = "gcr.io/distroless/java:11"
+        image = "gcr.io/distroless/java@sha256:629d4fdc17eec821242d45497abcb88cc0442c47fd5748baa79d88dde7da3e2d"
     }
     to {
         image = "limarktest/${project.name}:${project.version}"
