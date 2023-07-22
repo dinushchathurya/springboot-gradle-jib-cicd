@@ -29,7 +29,7 @@ allprojects {
         buildNumber = System.getenv("GITHUB_RUN_NUMBER") ?: "0"
     }
 
-    version = "${project.marketingVersion}-build-${project.ext.buildNumber}".toString()
+    version = "${project.majorVersion}-build-${project.ext.buildNumber}".toString()
 }
 
 dependencies {
