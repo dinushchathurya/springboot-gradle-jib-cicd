@@ -55,7 +55,7 @@ jib {
         image = "gcr.io/distroless/java@sha256:629d4fdc17eec821242d45497abcb88cc0442c47fd5748baa79d88dde7da3e2d"
     }
     to {
-        image = "limarktest/${project.name}"
+        image = "limarktest/${project.name}:${project.version}"
     }
 }
 
